@@ -1,11 +1,10 @@
 type User = {
-    name: string,
-    age: number
-}
+  name: string;
+  age: number;
+};
 
-const user:User = {
-    name: "sakib",
-    // age: "sakib" // gives error due to type alias (User)
-    age: 21
-}
-
+const user: User = {
+  name: "sakib",
+  // age: "sakib" // gives error due to type alias (User)
+  age: 21,
+};
