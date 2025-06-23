@@ -31,7 +31,7 @@
 
   // void
   function printHello(name: string): void {
-    console.log(name);
+    // console.log(name);
   }
 
   // never
@@ -40,12 +40,12 @@
     throw new Error(msg);
   }
   // A function that has a infinite loop
-  function infiniteLoop(): never {
-    while (true) {}
-  }
+  // function infiniteLoop(): never {
+  //   // while (true) {}
+  // }
   // A variable that can never have a value except the 'thing' also type never.
-  let x: never;
-  x = infiniteLoop(); // no-error
+  // let x: never;
+  // x = infiniteLoop(); // no-error
   // x = 1; // error
 
   type Shape = "circle" | "square" | "triangle";
@@ -162,5 +162,50 @@
 // Tuple
 {
   let myTuple: [string, number] = ["sakib", 20];
-  console.log(myTuple);
+  // console.log(myTuple);
+}
+// enum
+{
+  // by default - each member is auto-assigned a number starting from 0.
+  enum Direction {
+    Up = "up",
+    Down = "down",
+    Left = "left",
+    Right = "right",
+  }
+  console.log(Direction.Right);
+}
+// class
+{
+  class Axis {
+    x: number;
+    y: number;
+
+    constructor(x: number, y: number) {
+      (this.x = x), (this.y = y);
+    }
+  }
+
+  // shorthand
+  class Axis2 {
+    constructor(public x: number, public y: number) {
+      (this.x = x), (this.y = y);
+    }
+  }
+
+  const axisOfSomething = new Axis(12, 20);
+}
+// interfaces
+{
+  interface Person {
+    firstName: string;
+    lastName: string;
+    age: number;
+  }
+  // usage:
+  const person: Person = {
+    firstName: "something",
+    lastName: "something",
+    age: 39,
+  };
 }
